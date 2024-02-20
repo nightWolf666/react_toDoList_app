@@ -2,7 +2,6 @@ const Form = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        alert("Neues To Do hinzugefügt!");
     };
 
     return (
