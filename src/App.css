@@ -3,5 +3,21 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
 }
 
+.formContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20em;
+}
+
+
+.form {
+  display: flex;
+  gap: 2em;
+}
+
+.form label {
+  margin-right: 2em;
+}
