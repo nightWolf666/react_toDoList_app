@@ -9,14 +9,16 @@ const Form = () => {
         <section className="formContainer">
             <form className="form" onSubmit={handleSubmit}>
                 <div>
-                    <label>To Do hinzufügen:</label>
-                    <input type="text" placeholder="Was?" />
+                    <label htmlFor="toDoWhat">To Do hinzufügen:</label>
+                    <input id="toDoWhat" type="text" placeholder="Was?" />
                 </div>
                 <div>
-                    <input type="text" placeholder="Wer?" />
+                    <label htmlFor="toDoWho"></label>
+                    <input id="toDoWho" type="text" placeholder="Wer?" />
                 </div>
                 <div>
-                    <input type="text" placeholder="Bis wann?" />
+                    <label htmlFor="toDoWhen"></label>
+                    <input id="toDoWhen" type="text" placeholder="Bis wann?" />
                 </div>
                 <button type="submit">Hinzufügen</button>
             </form>

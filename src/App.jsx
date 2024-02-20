@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Form from "./components/Form.jsx";
+import List from "./components/List.jsx";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -13,10 +14,12 @@ function App() {
     {toDoName: "Urlaub machen ", who: "Peter", when: "Juni", status: "nicht erledigt"},
     ];
 
+
+
   return (
     <>
       <h1>To Do Liste</h1>
-      {/* <List /> */}
+      <List />
       <Form />
     </>
   )
@@ -24,3 +27,16 @@ function App() {
 
 export default App
 
+
+// <div className="dcHeroes">
+// {justiceLeague.map((hero) => (
+//   <HeroProfile key={hero.id} heroName={hero.name} />
+// ))}
+// </div>
+
+
+// <div className="cardsContainer">
+// {cats.map((animal) => (
+//   <Cards animalName={animal.animalName} image={animal.image} />
+// ))}
+// </div>

@@ -1,9 +1,20 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
   font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+}
+
+.heading-was-wer-wann {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1em;
+}
+
+.toDoList {
+  display: flex;
+  justify-content: space-around;
 }
 
 .formContainer {
