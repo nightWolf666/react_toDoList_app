@@ -18,7 +18,6 @@ function App() {
 
   return (
     <>
-      <h1>To Do Liste</h1>
       <List />
       <Form />
     </>
