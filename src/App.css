@@ -9,12 +9,20 @@
 .heading-was-wer-wann {
   display: flex;
   justify-content: space-around;
-  padding-top: 1em;
+  padding: 3em;
 }
 
-.toDoList {
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ulToDoList {
   display: flex;
   justify-content: space-around;
+  list-style-type: none;
+  width: 85%;
 }
 
 .formContainer {
