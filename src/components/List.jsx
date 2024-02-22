@@ -1,6 +1,12 @@
 import ListElement from "./ListElement.jsx"
 
-const List = ({toDos}) => {
+const List = ({toDos, setToDos}) => {
+
+    const toggleCompleted = (id) => {
+        setToDos((prev) => 
+        prev.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t))
+        )
+    };
 
     return (
         <>
@@ -15,9 +21,12 @@ const List = ({toDos}) => {
                     {toDos.map((todo) => (
                     <ListElement 
                     key={todo.id} 
+                    id={todo.id}
                     toDoName={todo.title}
                     toDoWho={todo.who}
-                    toDoDeadline={todo.deadline}/>
+                    toDoDeadline={todo.deadline}
+                    toDoCompleted={todo.completed}
+                    toggleCompleted={toggleCompleted}/>
                     ))}
                 </ul>
             </div>
