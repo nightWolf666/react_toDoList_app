@@ -6,10 +6,12 @@ import List from "./components/List.jsx";
 function App() {
   // const [count, setCount] = useState(0)
 
+  const [toDos, setToDos] = useState([])
+
   return (
     <>
-      <List />
-      <Form />
+      <List toDos={toDos} setToDos={setToDos}/>
+      <Form setToDos={setToDos}/>
     </>
   )
 };

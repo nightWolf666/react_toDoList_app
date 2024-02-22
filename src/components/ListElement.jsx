@@ -1,4 +1,4 @@
-export default function ListElement({toDoName, who, when}) {
+export default function ListElement({toDoName, toDoWho, toDoDeadline}) {
 
     return (
         <>
@@ -8,8 +8,8 @@ export default function ListElement({toDoName, who, when}) {
             </label>
             <ul className="ul-list-element">
                 <li className="ul-li-toDo">{toDoName}</li>
-                <li>{who}</li>
-                <li>{when}</li>
+                <li>{toDoWho}</li>
+                <li>{toDoDeadline}</li>
             </ul>
             <span className="ul-list-btn">
                 <button>Ändern</button>

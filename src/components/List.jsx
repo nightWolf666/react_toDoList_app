@@ -1,20 +1,6 @@
 import ListElement from "./ListElement.jsx"
 
-const List = () => {
-
-    const toDoItems = [
-        {id: 1, toDoName: "Einkaufen", who: "Peter", when: "Freitag", completed: false},
-        {id: 2, toDoName: "Staubsaugen", who: "Sarah", when: "Mittwoch", completed: false},
-        {id: 3, toDoName: "Hamster füttern", who: "Sarah", when: "Mittwoch", completed: false},
-        {id: 4, toDoName: "Brennholz hacken", who: "Uwe", when: "03.04.2024", completed: false},
-        {id: 5, toDoName: "Urlaub machen ", who: "Peter", when: "Juni", completed: false},
-        ];
-
-    // function addToDo() {
-    //     const newToDo = {
- 
-    //     }
-    // };
+const List = ({toDos}) => {
 
     return (
         <>
@@ -26,8 +12,12 @@ const List = () => {
             </div>
             <div className="list">
                 <ul className="ul-list-list">
-                    {toDoItems.map(({id, toDoName, who, when, completed}) => (
-                    <ListElement key={id} toDoName={toDoName} who={who} when={when} completed={completed}/>
+                    {toDos.map((todo) => (
+                    <ListElement 
+                    key={todo.id} 
+                    toDoName={todo.title}
+                    toDoWho={todo.who}
+                    toDoDeadline={todo.deadline}/>
                     ))}
                 </ul>
             </div>
