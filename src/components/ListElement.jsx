@@ -3,7 +3,23 @@ import { useState} from "react";
 export default function ListElement({toDoName, toDoWho, toDoDeadline, id, toDoCompleted, toggleCompleted}) {
 
     const style = toDoCompleted ? { textDecoration: "line-through" } : { textDecoration: "none" };
+    const initialState = {
+        title: toDoName,
+        who: toDoWho,
+        deadline: toDoDeadline,
+        id: id,
+        toDoCompleted:toDoCompleted,
+        completed: false,
+    }
 
+    const [listElementState, setlistElementState] = useState(initialState);
+
+
+    function handleClick(e) {
+        setlistElementState({...listElementState, [e.target.name]: e.target.value})
+        console.log(listElementState.id);
+        
+    }[];
 
     return (
         <>
