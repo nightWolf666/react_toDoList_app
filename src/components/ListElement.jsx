@@ -1,4 +1,21 @@
+import { useState } from "react";
+
 export default function ListElement({toDoName, toDoWho, toDoDeadline}) {
+
+    const initialState = {
+        title: "",
+        who: "",
+        deadline: "",
+        completed: false,
+    }
+
+    const [listElementState, setlistElementState] = useState(initialState);
+
+
+    function handleClick(e) {
+        setlistElementState({...listElementState, [e.target.name]: e.target.value})
+        
+    }[];
 
     return (
         <>
@@ -13,7 +30,7 @@ export default function ListElement({toDoName, toDoWho, toDoDeadline}) {
             </ul>
             <span className="ul-list-btn">
                 <button>Ändern</button>
-                <button>Löschen</button>
+                <button id="delButton" name="delButton" onClick={handleClick}>Löschen</button>
             </span>
         </li>
         </>
