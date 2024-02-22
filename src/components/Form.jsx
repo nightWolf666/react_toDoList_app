@@ -28,6 +28,7 @@ const Form = ({setToDos}) => {
                 title: formState.title,
                 who: formState.who,
                 deadline: formState.deadline,
+                completed: formState.completed,
             }
             ]);
         setFormState(initialState);
