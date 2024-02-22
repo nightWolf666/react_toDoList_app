@@ -1,22 +1,53 @@
-const Form = () => {
+import { useState } from "react";
 
-    function handleSubmit(e) {
+const Form = ({setToDos}) => {
+
+    const initialState = {
+        title: "",
+        who: "",
+        deadline: "",
+        completed: false,
+    }
+
+    const [formState, setFormState] = useState(initialState);
+
+
+    function handleInput(e) {
+        setFormState({...formState, [e.target.name]: e.target.value})
+    }
+
+    function addToList(e) {
         e.preventDefault();
-        alert("Neues To Do hinzugefügt!");
+        if (!formState.title) {
+            alert("Bitte fülle das Feld 'Was?' aus.");
+        } else { 
+            setToDos((prev) => [
+            ...prev,
+            {
+                id: crypto.randomUUID(),
+                title: formState.title,
+                who: formState.who,
+                deadline: formState.deadline,
+            }
+            ]);
+        setFormState(initialState);
+        }
     };
 
     return (
         <section className="formContainer">
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="form" onSubmit={addToList}>
                 <div>
-                    <label>To Do hinzufügen:</label>
-                    <input type="text" placeholder="Was?" />
+                    <label htmlFor="title">To Do hinzufügen:</label>
+                    <input id="title" name="title" type="text" value={formState.title} onChange={handleInput} placeholder="Was?" />
                 </div>
                 <div>
-                    <input type="text" placeholder="Wer?" />
+                    <label htmlFor="who"></label>
+                    <input id="who" name="who" type="text" value={formState.who} onChange={handleInput} placeholder="Wer?" />
                 </div>
                 <div>
-                    <input type="text" placeholder="Bis wann?" />
+                    <label htmlFor="deadline"></label>
+                    <input id="deadline" name="deadline" type="date" value={formState.deadline} onChange={handleInput}/>
                 </div>
                 <button type="submit">Hinzufügen</button>
             </form>
