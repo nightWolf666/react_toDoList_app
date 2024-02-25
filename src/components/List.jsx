@@ -8,7 +8,14 @@ const List = ({toDos, setToDos}) => {
         )
     };
 
-
+    const toBeDeletedFunction = (id) => {
+        setToDos((prev) => 
+        prev.map((i) => (i.id === id ? { ...i, toBeDeleted: !i.toBeDeleted } : i))
+        
+        )
+        
+        
+    };
 
 
     
@@ -30,7 +37,10 @@ const List = ({toDos, setToDos}) => {
                     toDoWho={todo.who}
                     toDoDeadline={todo.deadline}
                     toDoCompleted={todo.completed}
-                    toggleCompleted={toggleCompleted}/>
+                    toggleCompleted={toggleCompleted}
+                    toBeDeleted={todo.toBeDeleted}
+                    toBeDeletedFunction={toBeDeletedFunction}
+                    />
                     ))}
                 </ul>
             </div>

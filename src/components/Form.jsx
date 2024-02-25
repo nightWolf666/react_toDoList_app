@@ -7,6 +7,7 @@ const Form = ({setToDos}) => {
         who: "",
         deadline: "",
         completed: false,
+        toBeDeleted: false,
     }
 
     const [formState, setFormState] = useState(initialState);
@@ -29,6 +30,7 @@ const Form = ({setToDos}) => {
                 who: formState.who,
                 deadline: formState.deadline,
                 completed: formState.completed,
+                toBeDeleted: formState.toBeDeleted,
             }
             ]);
         setFormState(initialState);

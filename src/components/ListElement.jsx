@@ -1,25 +1,56 @@
 import { useState} from "react";
 
-export default function ListElement({toDoName, toDoWho, toDoDeadline, id, toDoCompleted, toggleCompleted}) {
+export default function ListElement({toDoName, toDoWho, toDoDeadline, id, toDoCompleted, toggleCompleted,toBeDeleted,toBeDeletedFunction}) {
 
     const style = toDoCompleted ? { textDecoration: "line-through" } : { textDecoration: "none" };
-    const initialState = {
-        title: toDoName,
-        who: toDoWho,
-        deadline: toDoDeadline,
-        id: id,
-        toDoCompleted:toDoCompleted,
-        completed: false,
-    }
 
-    const [listElementState, setlistElementState] = useState(initialState);
+    //const toBeDeletedtoDo = ? 
+    // const initialState = {
+    //     title: toDoName,
+    //     who: toDoWho,
+    //     deadline: toDoDeadline,
+    //     id: id,
+    //     toDoCompleted:toDoCompleted,
+    //     completed: toggleCompleted,
+    //     toBeDeleted:toBeDeleted,
+    // }
+
+    // const [listElementState, setlistElementState] = useState(initialState);
 
 
-    function handleClick(e) {
-        setlistElementState({...listElementState, [e.target.name]: e.target.value})
-        console.log(listElementState.id);
+    // function toBeDeletedtoDo(e) {
+    //     console.log(listElementState.toBeDeleted);
+    //     setlistElementState({...listElementState, [e.target.toBeDeleted]: true})
+    //     //toBeDeleted.setlistElementState(true);
+
+    //     console.log(listElementState);
         
-    }[];
+    // };
+
+    // const CartFood = ({
+    //     foodName,
+    //     foodPrice,
+    //     numberOfPortions,
+    //     cartFood,
+    //     setCartFood,
+    //     id,
+    //   }) => {
+    //     const handleRemoveFood = () => {
+    //           setCartFood((cartFood) => cartFood.filter((el) => el.foodId !== foodId));
+
+    //     };
+
+    const CartFood = ({
+        foodName,
+        foodPrice,
+        numberOfPortions,
+        cartFood,
+        setCartFood,
+        id,
+      }) => {
+        const handleRemoveFood = () => {
+          setCartFood(cartFood.filter((el) => el.id !== id));
+        };
 
     return (
         <>
@@ -40,7 +71,7 @@ export default function ListElement({toDoName, toDoWho, toDoDeadline, id, toDoCo
             </ul>
             <span className="ul-list-btn">
                 <button>Ändern</button>
-                <button id="delButton" name="delButton" onClick={handleClick}>Löschen</button>
+                <button id="delButton" name="delButton" onClick={() => toBeDeletedtoDo(id)}>Löschen</button>
             </span>
         </li>
         </>
